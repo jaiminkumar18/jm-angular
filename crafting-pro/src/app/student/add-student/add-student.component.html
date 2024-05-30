@@ -1,0 +1,23 @@
+<h1>I am add-student</h1>
+
+<p>add-student works!</p>
+
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi, minima distinctio culpa nisi a quasi commodi provident quas accusamus vero beatae ex corporis illo labore magnam, sunt nesciunt dolor? Asperiores?</p>
+<hr>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur molestiae quo autem possimus, voluptatibus at modi unde enim ullam excepturi exercitationem perferendis omnis cum, porro fugiat quas voluptatem nobis aliquid.</p>
+<hr>
+
+<!-- Property Binding -->
+
+<h1 [innerText]="adds" 
+    [title]="adds"
+    [classList]="classList"
+    [id]="myId"></h1>
+
+<!-- Event Binding - in this method remove ON -->
+<button type="button" (click)="buttonClick($event)">I am Button</button>
+<hr>
+<button type="button" (mouseover)="mouseOverHandler($event)" 
+                      (mouseout)="mouseOutHandler($event)"
+                      [class.background]="mouseOver">I am Button</button>
+
