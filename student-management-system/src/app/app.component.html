@@ -1,0 +1,77 @@
+<h1>Hello World</h1>
+
+<!--* Interpolation  -->
+<!--* Interpolation refers to embedding expressions into marked up text. By default, interpolation uses the double curly braces {{ and }} as delimiters.  -->
+
+<h2>{{head}}</h2>
+
+<!--* Arithmatic Operators  -->
+<h3>{{2+7}}</h3>
+<h3>{{a*b}}</h3>
+
+<!--* Function calling using Interpolation  -->
+<h4>{{getFullName()}}</h4>
+
+<h4>{{a>=5? "A is Greater than 5" : "A is not greater than 5" }}</h4>
+
+<!--*Data Binding -->
+<!--*Property Binding -->
+<!--*Event Binding -->
+<!--*Two Way Binding -->
+
+<!--* 1.Property Binding  -->
+<!-- Image -->
+<img [src]="imgUrl" alt="Image">
+
+<!-- Binding with title property -->
+<h1 [title]="h1Title">Hello World</h1>
+
+<!-- Binding with innerHTML property -->
+<h1 [title]="h1Title" [innerHTML]="getFullName()">Hello World</h1>
+
+<!--* 2. Event Binding  -->
+<!-- Button click event with alert -->
+<button (click)="buttonClick($event)">Click ME</button>
+
+<!-- Mouseover -->
+<!-- Here I used attribute binding to change color when event is happen. -->
+<p (mouseover)="mouseOver($event)" (mouseover)="mouseOver($event)" [style.color]="ifMouseOver ? 'red' : 'green'">This is Paragraph</p>
+
+<!--* Directives  
+Directives are classes that add additional behavior to elements in your Angular applications.-->
+<!--* Directive have Two Types Strutural and Attribute  -->
+<!--* Structural 
+*ngIf,*ngFor,*ngSwitch 
+Structural directives are responsible for HTML layout. They shape or reshape the DOM's structure, typically by adding, removing, and manipulating the host elements to which they are attached. -->
+
+<!--* 1.*ngFor  -->
+
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th>Sr.No</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>DOB</th>
+      <th>First</th>
+      <th>Last</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor =" let singleStudent of studentList, let srNo = index, let f=first, let l=last, let c=count">
+      <td>{{srNo+1}}</td>
+      <td>{{singleStudent.name}}</td>
+      <td>{{singleStudent.gender}}</td>
+      <td>{{singleStudent.dob}}</td>
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+      <td>{{c}}</td>
+    </tr>
+  </tbody>
+  <tfoot></tfoot>
+</table>
+
+
+
+

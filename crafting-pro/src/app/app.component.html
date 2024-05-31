@@ -2,10 +2,38 @@
 <h1>{{title}}</h1> <!-- *this is called Interpolation -->
 
 <app-add-student></app-add-student>
+<!-- <app-pipes></app-pipes> -->
 
 
 <!-- Property Binding -->
 <h2 [innerHTML]="heading"></h2>
+
+<!-- Pipes 30 May 2024 -->
+<h1>{{head}}</h1>
+<!-- Date Pipe -->
+<h2>Current Date:{{currentDate | date: "dd/MM/YYYY hh:mm:ss" }}</h2>
+
+<!-- Uppercase -->
+<h3>Upper Case:{{name | uppercase}}</h3>
+
+<!-- Lowercse -->
+<h3>Lower Case:{{name1 | lowercase}}</h3>
+
+<!-- titlecase - captalize each 1st word in the string -->
+<h3>Captalize Each Word of String:{{name2 | titlecase}}</h3>
+
+<!-- currancy pipe -->
+<h3>Currancy Pipe:{{price | currency: 'INR'}}</h3>
+<h3>Currancy Pipe:{{price | currency: 'USD'}}</h3>
+
+<!-- Decimal Pipe -->
+<h3>Decimal Pipe: {{ value | number:'1.2-2' }}</h3>
+
+<!-- Percentage Pipe -->
+<h3>Percentage Pipe: {{ percent | percent }}</h3>
+
+<!-- Slice Pipe -->
+<h3>Slice Pipe: {{str | slice:0:2}}</h3>
 
 
 
