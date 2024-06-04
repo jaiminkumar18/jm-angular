@@ -72,6 +72,36 @@ Structural directives are responsible for HTML layout. They shape or reshape the
   <tfoot></tfoot>
 </table>
 
+<!--* NgIf Directive  -->
+<button (click)="toggleHasPermission($event)">Permission</button>
+<div *ngIf="hasPermission; else elseRef">
+  hasPermission is True
+</div>
+
+<!--* ng-template is used for Else statement only   -->
+<ng-template #elseRef>
+  <div>
+    Hi i am elseRef
+  </div>
+</ng-template>
+
+<!--*NgFor  -->
+<li *ngFor="let item of items">I am *ngFor {{ item }}</li>
+
+
+<!--*Ng Switch  -->
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View</div>
+  <div *ngSwitchCase="'list'">{{items}}</div>
+  <div *ngSwitchDefault>Default View</div>
+</div>
+
+<button (click)="viewMode = 'map'">Show Map</button>
+<button (click)="viewMode = 'list'">Show List</button>
+<button (click)="viewMode = 'default'">Show Default</button>
+
+
+
 
 
 

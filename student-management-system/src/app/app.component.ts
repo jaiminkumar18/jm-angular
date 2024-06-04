@@ -57,8 +57,20 @@ studentList = [{
   dob: "18/10/1999"
 }]
 
+//* ngIF
+// Conditionaly creates or disposes of subviews from the template.
 
+// hasPermission = true;
+hasPermission = false;
 
+toggleHasPermission(e:any){
+  this.hasPermission = !this.hasPermission
+}
 
+items = ['apple','banana','watermelon']
+
+viewMode = 'map'
 
 }
+
+
