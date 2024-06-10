@@ -64,25 +64,20 @@ studentList = [{
   percentage:90
 }]
 
-<<<<<<< HEAD
 //* ngIf Directive
 // 	Conditionally creates or disposes of subviews from the template.
 hasPermission = false;
 // hasPermission = true;
-=======
 //* ngIF
 // Conditionaly creates or disposes of subviews from the template.
->>>>>>> ae3ec1dd6c3ad163e7ffd3cf6e402c18d89c4b47
 
 // hasPermission = true;
-hasPermission = false;
 
 toggleHasPermission(e:any){
   this.hasPermission = !this.hasPermission
 }
 
-<<<<<<< HEAD
-viewMode = 'map'
+// viewMode = 'map'
 
 // age = 17
 
@@ -132,12 +127,17 @@ student1 = {
   email:"smith.watson@gmail.com"
 }
 
+buttonClickedEventHandler(ev:any) {
+  console.log(ev)
+  alert(ev)
+}
 
-=======
+
 items = ['apple','banana','watermelon']
 
 viewMode = 'map'
->>>>>>> ae3ec1dd6c3ad163e7ffd3cf6e402c18d89c4b47
+
+name6 = 'jaimin'
 
 }
 
