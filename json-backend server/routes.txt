@@ -1,0 +1,11 @@
+GET    /students              -- Fetches a list of all students (Returns all students in the array.)
+GET    /students/:id          -- Fetches the details of a specific student by their ID.(Returns a specific student based on the ID.)
+POST   /students              -- Creates a new student.(Adds a new student to the array.)
+PUT    /students/:id          -- Updates an existing student completely by their ID.(Replaces the entire student object with a new one based on the ID.)
+PATCH  /students/:id          -- Partially updates an existing student by their ID.(Updates only the fields provided in the request body for the student with the given ID.)
+DELETE /students/:id          -- Deletes a student by their ID.(Removes the student with the given ID from the array.)
+
+Whole object la replace krnyasathi PUT use krtat:
+
+Ani ekhadhi properti update krnyasathi PATCH use krtat:
+

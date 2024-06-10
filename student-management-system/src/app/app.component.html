@@ -56,14 +56,21 @@ Structural directives are responsible for HTML layout. They shape or reshape the
       <th>First</th>
       <th>Last</th>
       <th>Count</th>
+      <th>Percentage</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor =" let singleStudent of studentList, let srNo = index, let f=first, let l=last, let c=count">
+    <tr *ngFor =" let singleStudent of studentList, let srNo = index, let f=first, let l=last, let c=count"
+    [ngClass]= "{
+      'back-red':singleStudent.percentage <= 70,
+      'back-blue':singleStudent.percentage >= 70,
+      'back-green':singleStudent.percentage >= 80,
+    }">
       <td>{{srNo+1}}</td>
       <td>{{singleStudent.name}}</td>
       <td>{{singleStudent.gender}}</td>
       <td>{{singleStudent.dob}}</td>
+      <td>{{singleStudent.percentage}}</td>
       <td>{{f}}</td>
       <td>{{l}}</td>
       <td>{{c}}</td>
@@ -73,5 +80,93 @@ Structural directives are responsible for HTML layout. They shape or reshape the
 </table>
 
 
+<!--* NgIf Directives -->
+<div *ngIf="hasPermission; else elseRef">
+  This content will be shown if hasPermission true
+</div>
+
+<ng-template #elseRef>
+<div>
+  This content will be shown if hasPermission false
+</div>
+</ng-template>
+
+<!--*Ng Switch  -->
+<div [ngSwitch]="viewMode">
+  <div *ngSwitchCase="'map'">Map View</div>
+  <div *ngSwitchCase="'list'">List View</div>
+  <div *ngSwitchDefault>Default View</div>
+</div>
+<button (click)="viewMode = 'map'">Show Map</button>
+<button (click)="viewMode = 'list'">Show List</button>
+<button (click)="viewMode = 'default'">Show Default</button>
+
+<div [ngSwitch]="age">
+  <div *ngSwitchCase="17">
+    You can not Drive
+  </div>
+  <div *ngSwitchCase="18">
+    You can drive
+  </div>
+</div>
+
+<!-- Input with ngSwitch -->
+<!-- ngSwitch Example -->
+<div [ngSwitch]="ageCategory(age)">
+  <div *ngSwitchCase="'adult'" class="adult">You are an adult (18+).</div>
+  <div *ngSwitchCase="'minor'" class="minor">You are a minor (under 18).</div>
+  <div *ngSwitchDefault>Age not specified.</div>
+</div>
+
+<!-- Input for Age -->
+<input type="number" [(ngModel)]="age" placeholder="Enter age">
+<p>Entered Age: {{ age }}</p>
 
 
+<!--*NgModel  -->
+
+<div class="container row g-3 col">
+<label>Name</label>
+<input type="text" name="userName" id="userName" [(ngModel)]="student.userName" >
+<br><hr>
+
+<label>DOB</label>
+<input type="date" name="dob" id="dob" [(ngModel)]="student.dob" >
+<div>
+  {{student.dob}}
+</div>
+<br><hr>
+
+
+<label>Email</label>
+<input type="text" name="email" id="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"[(ngModel)]="student.email" >
+<div>{{student.email}}</div>
+<br><hr>
+
+<label>Mobile</label>
+<input type="number" name="mob" id="mob" [(ngModel)]="student.mob" >
+<div>{{student.mob}}</div>
+</div>
+
+<!--* Pipe for json data printing -->
+<div>{{student | json}}</div>
+
+<!--*NgClass -->
+<div [ngClass]="bgColor==2? 'back-red' : 'back-blue'">
+  <h1>I am NgClass Directive</h1>
+</div>
+
+<!--*NgStyle -->
+<div [ngStyle]="setCurrentStyles">
+  This div is initially italic, normal weight, and extra large (24px).
+</div>
+
+<div [ngStyle]="{
+  'color':isRed ? 'red' : 'blue'
+}">Hello</div>
+
+
+<app-add-student [name]="student1.name"
+[title]="student1.title"
+[mobile]="student1.mobile"
+[email]="student1.email"></app-add-student>

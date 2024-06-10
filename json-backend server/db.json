@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": "9a34",
+      "name": "Akshay Dhanmane BJP",
+      "gender": "MALE",
+      "dob": "18/10/2000",
+      "mobile": "9273738976",
+      "email": "akshaydddd@gmail.com"
+    },
+    {
+      "id": "c68e",
+      "name": "Jaiminkumar Sonawane",
+      "gender": "MALE",
+      "dob": "18/10/1999",
+      "mobile": "8698104952",
+      "email": "jaiminsonwane@gmail.com"
+    },
+    {
+      "id": "f69f",
+      "name": "Saurabh Deshmukh",
+      "gender": "MALE",
+      "dob": "28/07/2004",
+      "mobile": "9273738976",
+      "email": "saurabh.deshmukh@gmail.com"
+    }
+  ]
+}

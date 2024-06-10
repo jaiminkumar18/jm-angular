@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterOutlet } from '@angular/router';
+import { StudentModule } from './student/student.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule],
+  imports: [RouterOutlet,CommonModule,FormsModule,StudentModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -16,6 +18,7 @@ export class AppComponent {
   
   a = 5
   b = 8
+isRed: any;
 
   getFullName() {
     return 'Jaimin Sonawane'
@@ -42,23 +45,84 @@ export class AppComponent {
  }
 
 //* *ngFor  
+// 	Repeat a node for each item in a list.
 
 studentList = [{
   name: "Jaimin",
   gender: "25",
-  dob: "18/10/1999"
+  dob: "18/10/1999",
+  percentage:80
 },{
   name: "Jaimin",
   gender: "25",
-  dob: "18/10/1999"
+  dob: "18/10/1999",
+  percentage:60
 },{
   name: "Jaimin",
   gender: "25",
-  dob: "18/10/1999"
+  dob: "18/10/1999",
+  percentage:90
 }]
 
+//* ngIf Directive
+// 	Conditionally creates or disposes of subviews from the template.
+hasPermission = false;
+// hasPermission = true;
 
+
+
+viewMode = 'map'
+
+// age = 17
+
+// Other example of ngSwitch
+age: number = 20;  // Initial age value
+
+  ageCategory(age: number): string {
+    return age >= 18 ? 'adult' : 'minor';
+  }
+
+
+  //* NgModel
+  student = {
+  userName:'jai',
+  dob:18/10/1999,
+  email:'jai@gmail.com',
+  mob:123456789
+ }
+
+//* NgClass
+bgColor = 22;
+
+
+//* NgStyle
+  canSave = true;
+  isSpecial = true;
+  isUnchanged = true;
+  isActive = true;
+
+  currentStyles: Record<string, string> = {};
+
+setCurrentStyles() {
+  // CSS styles: set per current state of component properties
+  this.currentStyles = {
+    'font-style': this.canSave ? 'italic' : 'normal',
+    'font-weight': !this.isUnchanged ? 'bold' : 'normal',
+    'font-size': this.isSpecial ? '24px' : '12px',
+  };
+}
+
+color = 'isRed';
+
+student1 = {
+  title:"abc",
+  name:"Smith Watson",
+  mobile:"1234567890",
+  email:"smith.watson@gmail.com"
+}
 
 
 
 }
+
+
